@@ -1,28 +1,50 @@
+<script>
+export default {
+  setup() {
+    function onError(err) {
+      console.error(err);
+      alert("Oops! Something went wrong while uploading the video. Please try again later.");
+    }
+
+    function onSuccess(message) {
+      console.log(message);
+      alert("Great! Your video has been uploaded successfully.");
+    }
+
+    return {
+      onError,
+      onSuccess,
+    };
+  },
+};
+</script>
+
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h2 class="title">Vue.js Video Upload</h2>
+    <main>
+      <ik-upload 
+        :tags="['tag1', 'tag2']"
+        :responseFields="['tags']"
+        :onError="onError"
+        :onSuccess="onSuccess"
+        customCoordinates="10,10,100,100"
+      />
+    </main>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.title {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 20px 0;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  margin: 0 auto;
 }
 </style>
