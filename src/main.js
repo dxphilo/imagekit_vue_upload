@@ -10,7 +10,7 @@ Vue.config.productionTip = false;
 Vue.use(ImageKit, {
   urlEndpoint: "https://ik.imagekit.io/mljbvpxzd", // Required: Your ImageKit URL endpoint
   publicKey: "public_Z1+OqJvvxckkpW8x45Kpoj5SQP0=", // Optional: Your ImageKit public key
-  authenticationEndpoint: "http://localhost:3000/imagekit" // Optional: Your authentication endpoint
+  authenticationEndpoint: "https://elk2.onrender.com/imagekit" // Optional: Your authentication endpoint
 });
 
 new Vue({
